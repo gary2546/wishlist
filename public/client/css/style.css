@@ -1,0 +1,106 @@
+.form-max-width {
+    max-width: 600px;
+}
+
+.user-info-label {
+    max-width: 150px;
+}
+
+.icon-large {
+    font-size: 20px;
+}
+
+.users-table td {
+    font-size: 12px;
+}
+
+.forms-container {
+    margin: 20px;
+}
+
+hr {
+    width: 100%;
+}
+
+th {
+    white-space: nowrap;
+}
+
+.sales-table td {
+    font-size: 8px;
+}
+
+.center {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.categoryContainer, .saleContainer {
+    font-size: 20px;
+}
+
+.categoryContainer .list-group-item span, .saleContainer .list-group-item span {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+.sale-image {
+    max-width: 500px;
+}
+
+.sale-details-container p{
+    font-size: 18px;
+}
+
+.comments {
+    clear: both;
+    padding-top: 25px;
+}
+
+.comment-buttons button {
+    width: 70px;
+}
+
+@media (max-width: 920px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}

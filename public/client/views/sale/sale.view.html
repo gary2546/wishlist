@@ -1,0 +1,44 @@
+<ng-include src="'views/sidebar/sidebar.view.html'"></ng-include>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-controller="SaleController">
+    <h1 class="page-header">Sales</h1>
+    <div class="users-container">
+        <div class="table-responsive users-table">
+            <table class="table table-striped sales-table">
+                <thead>
+                <tr>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Title</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Link</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Image Link</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Description</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Category Id</th>
+                    <th class="actions-column"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="title" ng-model="title"></td>
+                    <td><input type="text" class="form-control" placeholder="link" ng-model="link"></td>
+                    <td><input type="text" class="form-control" placeholder="image link" ng-model="imageLink"></td>
+                    <td><input type="text" class="form-control" placeholder="description" ng-model="description"></td>
+                    <td><input type="text" class="form-control" placeholder="category id" ng-model="categoryId"></td>
+                    <td>
+                        <span class="glyphicon glyphicon-plus icon-large" aria-hidden="true" ng-click="addSale()"></span>
+                        <span class="glyphicon glyphicon-ok icon-large" aria-hidden="true" ng-click="updateSale()"></span>
+                    </td>
+                </tr>
+                <tr ng-repeat="sale in sales">
+                    <td>{{sale.title}}</td>
+                    <td>{{sale.link}}</td>
+                    <td>{{sale.imageLink}}</td>
+                    <td>{{sale.description}}</td>
+                    <td>{{sale.categoryId}}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-remove icon-large" aria-hidden="true" ng-click="deleteSale($index)"></span>
+                        <span class="glyphicon glyphicon-pencil icon-large" aria-hidden="true" ng-click="selectSale($index)"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

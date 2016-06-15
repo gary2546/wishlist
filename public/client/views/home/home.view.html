@@ -1,0 +1,9 @@
+<div class="main" ng-controller="HomeController">
+    <h1 class="page-header">Sales</h1>
+    <div ng-repeat="sale in sales" class="saleContainer list-group">
+        <a href="#/sale/{{sale._id}}" class="list-group-item">
+            <span class="badge">{{sale.wishlisted}} wishlisted</span>
+            {{sale.title}}
+        </a>
+    </div>
+</div>

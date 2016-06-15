@@ -1,0 +1,9 @@
+<div class="main" ng-controller="CategoryController">
+    <h1 class="page-header">Categories</h1>
+    <div ng-repeat="category in categories" class="categoryContainer list-group">
+        <a href="#/category/{{category._id}}" class="list-group-item">
+            <span class="badge">{{category.sales.length}} sales</span>
+            {{category.title}}
+        </a>
+    </div>
+</div>

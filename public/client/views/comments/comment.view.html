@@ -1,0 +1,35 @@
+<ng-include src="'views/sidebar/sidebar.view.html'"></ng-include>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-controller="CommentController">
+    <h1 class="page-header">Comments</h1>
+    <div class="users-container">
+        <div class="table-responsive users-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Comment</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Sale Id</th>
+                    <th class="actions-column"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="comment" ng-model="text"></td>
+                    <td><input type="text" class="form-control" placeholder="sale id" ng-model="saleId"></td>
+                    <td>
+                        <span class="glyphicon glyphicon-plus icon-large" aria-hidden="true" ng-click="addComment()"></span>
+                        <span class="glyphicon glyphicon-ok icon-large" aria-hidden="true" ng-click="updateComment()"></span>
+                    </td>
+                </tr>
+                <tr ng-repeat="comment in comments">
+                    <td>{{comment.text}}</td>
+                    <td>{{comment.saleId}}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-remove icon-large" aria-hidden="true" ng-click="deleteComment($index)"></span>
+                        <span class="glyphicon glyphicon-pencil icon-large" aria-hidden="true" ng-click="selectComment($index)"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

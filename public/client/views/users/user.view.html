@@ -1,0 +1,38 @@
+<ng-include src="'client/views/sidebar/sidebar.view.html'"></ng-include>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-controller="UserController">
+    <h1 class="page-header">Users</h1>
+    <div class="users-container">
+        <div class="table-responsive users-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Username</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Password</th>
+                    <th><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Admin</th>
+                    <th class="actions-column"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="username" ng-model="username"></td>
+                    <td><input type="text" class="form-control" placeholder="password" ng-model="password"></td>
+                    <td><input type="checkbox" class="form-control" id="inputAdmin" ng-model="isAdmin"></td>
+                    <td>
+                        <span class="glyphicon glyphicon-plus icon-large" aria-hidden="true" ng-click="addUser()"></span>
+                        <span class="glyphicon glyphicon-ok icon-large" aria-hidden="true" ng-click="updateUser()"></span>
+                    </td>
+                </tr>
+                <tr ng-repeat="user in users">
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user.isAdmin}}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-remove icon-large" aria-hidden="true" ng-click="deleteUser($index)"></span>
+                        <span class="glyphicon glyphicon-pencil icon-large" aria-hidden="true" ng-click="selectUser($index)"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

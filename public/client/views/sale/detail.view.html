@@ -1,0 +1,34 @@
+<div class="main" ng-controller="SaleDetailController">
+    <h1 class="page-header">{{sale.title}}</h1>
+    <div class="saleDetailContainer row">
+        <div class="sale-image-container col-xs-12 col-sm-12 col-lg-6">
+            <img src="{{sale.imageLink}}" class="sale-image">
+        </div>
+        <div class="sale-details-container col-xs-12 col-sm-12 col-lg-6">
+            <h2>Details</h2>
+            <p>{{sale.description}}</p>
+            <br>
+            <p>In {{sale.wishlisted}} wishlists</p>
+            <a class="btn btn-default" href="{{sale.link}}">See Sale</a>
+            <button ng-click="addToWishlist()" ng-if="!wishlisted" type="button" class="btn btn-default">Add to Wishlist</button>
+            <button ng-click="removeFromWishlist()" ng-if="wishlisted" type="button" class="btn btn-default">Remove from Wishlist</button>
+        </div>
+        <div class="comments col-sm-8">
+            <h2>Comments</h2>
+            <div class="form-group col-xs-10">
+                <input type="text" class="form-control" id="inputComment" placeholder="Comment" ng-model="commentText">
+            </div>
+            <button class="btn btn-default col-xs-2" ng-click="postComment()">Post</button>
+            <ul ng-repeat="comment in comments" class="col-xs-12">
+                <li class="list-group-item col-xs-10">
+                    <span class="badge">{{comment.foundHelpful}} found helpful</span>
+                    {{comment.text}}
+                </li>
+                <div class="comment-buttons col-xs-2">
+                    <button ng-if="!isHelpful(comment)" class="float-right btn btn-default col-xs-2" ng-click="addHelpful(comment, $index)">Helpful</button>
+                    <button ng-if="isHelpful(comment)" class="float-right btn btn-default col-xs-2" ng-click="removeHelpful(comment, $index)">Undo</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>

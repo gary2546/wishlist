@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Wishlist">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Wishlist</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <![endif]-->
+</head>
+
+<body ng-controller="MainController">
+
+    <ng-include src="'views/header/header.view.html'"></ng-include>
+    <!--ng-include src="'views/sidebar/sidebar.view.html'"></ng-include-->
+
+    <div ng-view></div>
+
+    <!-- JS libraries -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <script src="services/user.service.client.js"></script>
+    <script src="services/sale.service.client.js"></script>
+    <script src="services/comment.service.client.js"></script>
+    <script src="services/category.service.client.js"></script>
+
+    <script src="views/main/main.controller.js"></script>
+    <script src="views/header/header.controller.js"></script>
+    <script src="views/sidebar/sidebar.controller.js"></script>
+    <script src="views/users/user.controller.js"></script>
+    <script src="views/users/login.controller.js"></script>
+    <script src="views/users/register.controller.js"></script>
+    <script src="views/sale/sale.controller.js"></script>
+    <script src="views/sale/add.controller.js"></script>
+    <script src="views/sale/detail.controller.js"></script>
+    <script src="views/comments/comment.controller.js"></script>
+    <script src="views/home/home.controller.js"></script>
+    <script src="views/home/wishlist.controller.js"></script>
+    <script src="views/category/category.controller.js"></script>
+    <script src="views/category/add.controller.js"></script>
+    <script src="views/category/sale.controller.js"></script>
+    <script src="views/sale/search.controller.js"></script>
+</body>
+</html>
