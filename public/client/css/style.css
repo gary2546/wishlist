@@ -52,6 +52,7 @@ th {
 
 .sale-image {
     max-width: 500px;
+    max-height: 400px;
 }
 
 .sale-details-container p{
