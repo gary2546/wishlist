@@ -1,9 +1,10 @@
 module.exports = function(mongoose) {
     var SaleSchema = mongoose.Schema({
         title: String,
+        category: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'},
         link: String,
         imageLink: String,
-        postedBy: String,
+        postedBy: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
         description: String,
         comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}],
         created: {type: Date, default: Date.now},

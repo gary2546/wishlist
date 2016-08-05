@@ -5,7 +5,7 @@
         .module('Wishlist')
         .controller("CategoryController", CategoryController);
 
-    function CategoryController($scope, CategoryService) {
+    function CategoryController($scope, CategoryService, UserService) {
         getCategories();
 
         function getCategories() {

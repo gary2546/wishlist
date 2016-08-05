@@ -9,6 +9,10 @@
 
         var service = {};
 
+        service.findUserById = function(userId) {
+            return $http.get("/api/project/user/" + userId);
+        };
+
         service.findUserByUsernameAndPassword = function(username, password) {
             return $http.post("/api/project/login", {username: username, password: password});
         };

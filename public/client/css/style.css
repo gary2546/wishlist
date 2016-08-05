@@ -107,3 +107,11 @@ th {
         overflow: hidden!important;
     }
 }
+
+.saleContainer span {
+    margin-left: 0 !important;
+}
+
+.saleScores {
+    float: right;
+}

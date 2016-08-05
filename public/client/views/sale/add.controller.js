@@ -20,19 +20,21 @@
         }
 
         $scope.submit = function() {
-            if(!$scope.link || !$scope.title || !$scope.imageLink || !$rootScope.user || !$scope.categoryId || !$scope.description) {
+            if(!$scope.link || !$scope.title || !$scope.imageLink || !$rootScope.user || !$scope.categoryIndex || !$scope.description) {
                 $scope.error = "Please enter every field.";
             }
             else {
+                var category = $scope.categories[$scope.categoryIndex];
                 var sale = {
                     title: $scope.title,
+                    category: category,
                     link: $scope.link,
                     description: $scope.description,
-                    postedBy: $rootScope.user._id,
+                    postedBy: $rootScope.user,
                     imageLink: $scope.imageLink
                 };
 
-                SaleService.createSale($scope.categoryId, sale).then(
+                SaleService.createSale(category._id, sale).then(
                     function(res) {
                         $scope.$location.path("/home");
                     },
