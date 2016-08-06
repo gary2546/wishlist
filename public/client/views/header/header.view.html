@@ -20,6 +20,8 @@
             </ul>
 
             <ul ng-if="!loggedIn" class="nav navbar-nav navbar-right">
+                <li ng-class="getClass('/sale/new')"><a href="#/login">Submit Sale</a></li>
+                <li ng-class="getClass('/category/new')"><a href="#/login">Create Category</a></li>
                 <li ng-class="getClass('/register')"><a href="#/register">Register</a></li>
                 <li ng-class="getClass('/login')"><a href="#/login">Login</a></li>
             </ul>
