@@ -67,7 +67,7 @@ th {
 }
 
 .comment-buttons button {
-    width: 70px;
+    width: 80px;
 }
 
 @media (max-width: 920px) {
@@ -113,5 +113,22 @@ th {
 }
 
 .saleScores {
+    display: inline;
     float: right;
+    font-size: 12px;
+}
+
+.commentScores {
+    display: inline;
+    float: right;
+}
+
+.commentFooter {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+
+.glyphicon {
+    margin-right: 5px;
 }

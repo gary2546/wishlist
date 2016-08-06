@@ -16,13 +16,20 @@
         <div class="comments col-sm-8">
             <h2>Comments</h2>
             <div class="form-group col-xs-10">
-                <input type="text" class="form-control" id="inputComment" placeholder="Comment" ng-model="commentText">
+                <textarea rows="4" class="form-control" id="inputComment" placeholder="Comment" ng-model="commentText"></textarea>
             </div>
             <button class="btn btn-default col-xs-2" ng-click="postComment()">Post</button>
             <ul ng-repeat="comment in comments" class="col-xs-12">
                 <li class="list-group-item col-xs-10">
-                    <span class="badge">{{comment.foundHelpful}} found helpful</span>
                     {{comment.text}}
+                    <div class="commentFooter">
+                        <span>Posted by {{comment.postedByName}}</span>
+                        <div class="commentScores">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                            {{comment.foundHelpful}}
+                        </div>
+                    </div>
+
                 </li>
                 <div class="comment-buttons col-xs-2">
                     <button ng-if="!isHelpful(comment)" class="float-right btn btn-default col-xs-2" ng-click="addHelpful(comment, $index)">Helpful</button>

@@ -1,12 +1,15 @@
 <div ng-repeat="sale in sales" class="saleContainer list-group">
     <a href="#/sale/{{sale._id}}" class="list-group-item">
         <div class="saleHeader">
-            <span>{{sale.createdDate}} | {{sale.postedByName}}</span>
+            <span>Posted on {{sale.createdDate}} by {{sale.postedByName}}</span>
         </div>
         <div>{{sale.title}}</div>
         <div class="saleFooter">
             <span>{{sale.categoryName}}</span>
-            <span class="saleScores">{{sale.comments.length}} comments | {{sale.wishlisted}} wishlisted</span>
+            <div class="saleScores">
+                {{sale.comments.length}} <span class="glyphicon glyphicon-comment"></span>
+                {{sale.wishlisted}} <span class="glyphicon glyphicon-heart"></span>
+            </div>
         </div>
     </a>
 </div>

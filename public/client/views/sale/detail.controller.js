@@ -11,10 +11,25 @@
         inWishlist();
         getComments();
 
+        function getCommentUsername(comment) {
+            UserService.findUserById(comment.postedBy).then(
+                function(res) {
+                    comment.postedByName = res.data ? res.data.username : "unknown";
+                },
+                function(error) {
+                    console.log(error);
+                }
+            )
+        }
+
         function getComments() {
             CommentService.findCommentsBySale(saleId).then(
                 function(res) {
                     $scope.comments = res.data || [];
+
+                    for(var i = 0; i < $scope.comments.length; i++) {
+                        getCommentUsername($scope.comments[i]);
+                    }
                 },
                 function(error) {
                     console.log(error);
